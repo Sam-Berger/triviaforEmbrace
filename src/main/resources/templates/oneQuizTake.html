@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h2 th:text="${quiz.name}"></h2>
+
+    <form method="post">
+        <div class="form-group">
+            <label th:for="teamName">Enter Your Team Name</label>
+            <input class="form-control" th:field="${answers.teamName}" />
+            <span th:errors="${answers.teamName}" class="error"></span>
+        </div>
+
+
+        <!--&lt;!&ndash;        TODO now that teamName is entered, display the quiz and give an answer box to fill it answer that can be -->
+
+<!--TODO lets do this the tedious route and hardcode each question and answer. Then we can later come back and do
+iteration. I know how to iterate the questions, but I do not know how to iterate each oneAnswer, and then put it into
+ a round user answer list.-->
+
+<!--      This Code is the basic for the iteration route.  -->
+<!--        <div th:each="question : ${quiz.questions}" class="form-group">-->
+<!--            <label th:text="${question.question}"></label>-->
+<!--            <input type="text" id="answer1" name="answer1" value="answer1" />-->
+<!--        </div> -->
+
+<!--        Below is trying to hard code each question answer. That may not work the best-->
+        <div>
+            <label th:text="${quiz.questions[0].question}" th:for="oneAnswer"></label>
+            <input th:field="${oneAnswer0.oneanswer}"/>
+
+
+
+        </div>
+
+<!--        <div>-->
+<!--            <label th:text="${quiz.questions[1].question}"></label>-->
+<!--            <input th:field="${oneAnswer1.oneanswer}"/>-->
+<!--        </div>-->
+
+        <input type="submit" value="Submit" />
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<body class="container  body-content">
+<h1 th:text="${'Quiz: ' + quiz.name}">Default Title</h1>
+
+
+<h3 th:text="${quiz.name}"></h3>
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Additional Info</th>
+    </tr>
+    <tr th:each="question : ${quiz.questions}">
+        <td th:text="${question.question}"></td>
+        <td th:text="${question.answer}"></td>
+        <td th:text="${question.additionalAnswerInfo}"></td>
+    </tr>
+</table>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+</div>
+
+<div class="container body-content">
+    <h2>Trivia Rounds</h2>
+    <ul>
+        <li th:each="quiz : ${quizzes}">
+            <a th:href="@{'/oneQuiz/' + ${quiz.id}}" th:text="${quiz.name}"></a>
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>

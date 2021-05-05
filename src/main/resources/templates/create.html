@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h1>Create a Quiz</h1>
+
+<form method="post">
+    <div>
+        <label th:for="name">Quiz Name</label>
+        <input th:field="${quiz.name}"/>
+    </div>
+    <br>
+    <p>Question 1</p>
+    <div>
+        <label th:for="question">Add a Question</label>
+        <input th:field="${questions.question}"/>
+    </div>
+    <div>
+        <label th:for="answer">Add an Answer</label>
+        <input th:field="${questions.answer}"/>
+    </div>
+    <div>
+        <label th:for="questionType">Question Type</label>
+        <input th:field="${questions.questionType}"/>
+    </div>
+    <div>
+        <label th:for="additionalAnswerInfo">Add Additional Information</label>
+        <input th:field="${questions.additionalAnswerInfo}"/>
+    </div>
+
+    <p>Question 2</p>
+    <div>
+        <label th:for="question">Add a Question</label>
+        <input th:field="${questions.question}"/>
+    </div>
+    <div>
+        <label th:for="answer">Add an Answer</label>
+        <input th:field="${questions.answer}"/>
+    </div>
+    <div>
+        <label th:for="questionType">Question Type</label>
+        <input th:field="${questions.questionType}"/>
+    </div>
+    <div>
+        <label th:for="additionalAnswerInfo">Add Additional Information</label>
+        <input th:field="${questions.additionalAnswerInfo}"/>
+    </div>
+
+
+
+    <input type="submit" value="Create Quiz"/>
+</form>
+
+</body>
+</html>

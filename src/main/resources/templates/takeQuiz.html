@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<div th:each="quiz : ${quizzes}">
+<h2 th:text="${quiz.name}"></h2>
+
+<form method="post">
+    <div class="form-group">
+        <label th:for="teamName">Enter Your Team Name</label>
+        <input class="form-control" th:field="${answers.teamName}" />
+        <span th:errors="${answers.teamName}" class="error"></span>
+    </div>
+
+<!--&lt;!&ndash;        TODO now that teamName is entered, display the quiz and give an answer box to fill it answer that can be -->
+<!--then entered.&ndash;&gt;-->
+
+    <div th:each="question, Stat : ${quiz.questions}" class="form-group">
+        <label th:text="${question.question}"></label>
+<!--        <input type="text" th:field="${answer}" />-->
+        <!--        <input type="text" th:field="${Stat.count}"/>-->
+<!--            <input type="text" th:field="${Stat.count}"/>-->
+
+<!--        <input type="text" id="${answer} + ${Stat.count}" name="${answer} + ${Stat.count}" value="${answer} + ${Stat.count}" />-->
+
+        <input type="text" id="answer1" name="answer1" value="answer1" />
+
+
+        <!--        <p th:text="${Stat.count}"></p>-->
+<!--        <p th:text="${Stat.count} + answer"></p>-->
+<!--        <p th:text="${question.question.id"}></p>-->
+
+
+    </div>
+<!--    TODO make the quiz generate and have it be static. So have question1 answer sent, question 2 answer sent, and
+ process them in POST. Figure out dynamic version later-->
+
+    <input type="submit" value="Submit" />
+</form>
+
+</div>
+</body>
+</html>
